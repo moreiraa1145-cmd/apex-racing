@@ -1,0 +1,425 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --background: #090b10;
+  --panel: #121620;
+  --border: #292f3c;
+  --red: #ff334b;
+  --blue: #29b6ff;
+  --white: #f5f6fa;
+  --muted: #969eae;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 22px 7%;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: var(--red);
+  margin-left: 6px;
+}
+
+.season,
+.small-label,
+.eyebrow {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.container {
+  width: min(1200px, 92%);
+  margin: auto;
+}
+
+.hero {
+  padding: 42px 0 24px;
+}
+
+.eyebrow {
+  color: var(--red);
+}
+
+h1,
+h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+h1 {
+  font-size: clamp(48px, 8vw, 82px);
+  line-height: 1;
+  letter-spacing: -1px;
+  margin: 14px 0;
+}
+
+h1 span {
+  color: var(--red);
+}
+
+h2 {
+  margin: 7px 0 0;
+  font-size: 27px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.race-status {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.race-status > div {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.race-status strong {
+  display: block;
+  margin-top: 9px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 24px;
+}
+
+.game-panel,
+.driver-card,
+.leaderboard {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.game-panel {
+  padding: 20px;
+}
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.live {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #c8d0dc;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.live > span:first-child {
+  width: 7px;
+  height: 7px;
+  background: #43d49b;
+  border-radius: 50%;
+}
+
+.canvas-container {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #353c48;
+  border-radius: 7px;
+  background: #26372c;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.control-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+  padding: 15px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.control-card strong {
+  grid-column: 1 / -1;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.red-control {
+  border-left: 3px solid var(--red);
+}
+
+.red-control strong {
+  color: var(--red);
+}
+
+.blue-control {
+  border-left: 3px solid var(--blue);
+}
+
+.blue-control strong {
+  color: var(--blue);
+}
+
+.game-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 17px;
+}
+
+button {
+  padding: 13px 20px;
+  border-radius: 5px;
+  border: 1px solid var(--red);
+  background: var(--red);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.12);
+}
+
+button:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+button.secondary {
+  background: transparent;
+  border-color: var(--border);
+}
+
+#message {
+  margin: 15px 0 0;
+  min-height: 20px;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.driver-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.driver-card {
+  padding: 20px;
+}
+
+.red-card {
+  border-top: 3px solid var(--red);
+}
+
+.blue-card {
+  border-top: 3px solid var(--blue);
+}
+
+.driver-card label {
+  display: block;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  background: #090b10;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: white;
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--blue);
+}
+
+.driver-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.driver-stats > div {
+  background: #0b0e14;
+  padding: 13px;
+  border-radius: 5px;
+}
+
+.driver-stats span {
+  display: block;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.driver-stats strong {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 23px;
+  margin-top: 8px;
+}
+
+.speed-track {
+  height: 5px;
+  margin-top: 15px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #303643;
+}
+
+.speed-track div {
+  height: 100%;
+  width: 0;
+  transition: width .1s;
+}
+
+#speedBar1 {
+  background: var(--red);
+}
+
+#speedBar2 {
+  background: var(--blue);
+}
+
+.driver-card > p {
+  min-height: 17px;
+  margin: 15px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.leaderboard {
+  padding: 22px;
+  margin: 22px 0 40px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 12px;
+}
+
+th,
+td {
+  padding: 15px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+footer {
+  padding: 25px 10px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 700px) {
+  .topbar {
+    padding: 18px 4%;
+  }
+
+  .season {
+    font-size: 8px;
+    text-align: right;
+  }
+
+  .game-panel {
+    padding: 12px;
+  }
+
+  .driver-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .race-status strong {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 420px) {
+  .race-status {
+    gap: 6px;
+  }
+
+  .race-status > div {
+    padding: 10px;
+  }
+
+  .race-status strong {
+    font-size: 16px;
+  }
+
+  .controls {
+    grid-template-columns: 1fr;
+  }
+
+  .control-card {
+    padding: 12px;
+  }
+}

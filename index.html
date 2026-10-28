@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Apex Racing | Two Drivers</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <a class="logo" href="#">APEX<span>RACING</span></a>
+    <span class="season">LOCAL MULTIPLAYER · 2026</span>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <p class="eyebrow">TWO DRIVERS. ONE TRACK.</p>
+      <h1>THE GRAND PRIX<span>.</span></h1>
+      <p class="subtitle">
+        Dos pilotos, un circuito y un solo ganador.
+      </p>
+    </section>
+
+    <section class="race-status">
+      <div>
+        <span class="small-label">ESTADO</span>
+        <strong id="raceStatus">EN PARRILLA</strong>
+      </div>
+
+      <div>
+        <span class="small-label">TIEMPO</span>
+        <strong id="timer">00:00.000</strong>
+      </div>
+
+      <div>
+        <span class="small-label">VUELTAS</span>
+        <strong id="lapStatus">0 / 3</strong>
+      </div>
+    </section>
+
+    <section class="game-panel">
+
+      <div class="panel-heading">
+        <div>
+          <span class="small-label">CIRCUITO 01</span>
+          <h2>Velocity Grand Circuit</h2>
+        </div>
+
+        <span class="live">
+          <span></span>
+          <span id="trackStatus">READY</span>
+        </span>
+      </div>
+
+      <div class="canvas-container">
+        <canvas id="gameCanvas" width="900" height="540">
+          Tu navegador no soporta Canvas.
+        </canvas>
+      </div>
+
+      <div class="controls">
+        <div class="control-card red-control">
+          <strong>JUGADOR 1</strong>
+          <span>W: acelerar</span>
+          <span>S: frenar</span>
+          <span>A / D: girar</span>
+        </div>
+
+        <div class="control-card blue-control">
+          <strong>JUGADOR 2</strong>
+          <span>↑: acelerar</span>
+          <span>↓: frenar</span>
+          <span>← / →: girar</span>
+        </div>
+      </div>
+
+      <div class="game-buttons">
+        <button id="startButton">START RACE</button>
+        <button id="resetButton" class="secondary">REINICIAR</button>
+      </div>
+
+      <p id="message" role="status" aria-live="polite">
+        Introduce los nombres y comienza la carrera.
+      </p>
+
+    </section>
+
+    <section class="driver-grid">
+
+      <article class="driver-card red-card">
+        <span class="small-label">RED TEAM</span>
+        <h2>Jugador 1</h2>
+
+        <label for="pilot1">Nombre del piloto</label>
+        <input id="pilot1" maxlength="20"
+               value="Pilot Red" autocomplete="off">
+
+        <div class="driver-stats">
+          <div>
+            <span>VELOCIDAD</span>
+            <strong><span id="speed1">0</span> km/h</strong>
+          </div>
+
+          <div>
+            <span>VUELTAS</span>
+            <strong id="laps1">0 / 3</strong>
+          </div>
+        </div>
+
+        <div class="speed-track">
+          <div id="speedBar1"></div>
+        </div>
+
+        <p id="result1">Esperando la salida...</p>
+      </article>
+
+      <article class="driver-card blue-card">
+        <span class="small-label">BLUE TEAM</span>
+        <h2>Jugador 2</h2>
+
+        <label for="pilot2">Nombre del piloto</label>
+        <input id="pilot2" maxlength="20"
+               value="Pilot Blue" autocomplete="off">
+
+        <div class="driver-stats">
+          <div>
+            <span>VELOCIDAD</span>
+            <strong><span id="speed2">0</span> km/h</strong>
+          </div>
+
+          <div>
+            <span>VUELTAS</span>
+            <strong id="laps2">0 / 3</strong>
+          </div>
+        </div>
+
+        <div class="speed-track">
+          <div id="speedBar2"></div>
+        </div>
+
+        <p id="result2">Esperando la salida...</p>
+      </article>
+
+    </section>
+
+    <section class="leaderboard">
+      <div class="panel-heading">
+        <div>
+          <span class="small-label">RACE RESULTS</span>
+          <h2>Hall of Fame</h2>
+        </div>
+        <span class="live">CLASIFICACIÓN</span>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>POS.</th>
+              <th>PILOTO</th>
+              <th>TIEMPO</th>
+              <th>ESTADO</th>
+            </tr>
+          </thead>
+
+          <tbody id="rankingBody">
+            <tr>
+              <td colspan="4">Todavía no hay resultados.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    APEX RACING · STUDENT GAME PROJECT · 2026
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+
+  </body>
+  </html>
+  
